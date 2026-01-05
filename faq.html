@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtualCare - FAQ Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #4CAF50; margin-bottom: 30px; }
+        .faq-item { margin-bottom: 20px; }
+        .question { font-weight: bold; color: #388E3C; cursor: pointer; }
+        .answer { display: none; padding-top: 10px; }
+        .faq-item.active .answer { display: block; }
+        
+        /* Back Button Styling */
+        .back-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .back-btn span {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .back-btn:hover {
+            color: #388E3C;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            const item = document.getElementById(id);
+            item.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <!-- Back Button Section -->
+    <div class="back-btn-container">
+        <a href="front.html">
+            <button class="back-btn">&larr; Back to Home</button>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Frequently Asked Questions (FAQ)</h1>
+
+        <!-- Questions 1-30 -->
+        <div class="faq-item" id="faq1" onclick="toggleAnswer('faq1')">
+            <div class="question">1. What is exposure therapy?</div>
+            <div class="answer">Exposure therapy is a psychological treatment that helps individuals confront their fears by gradually exposing them to anxiety-inducing situations in a controlled environment. This method is effective in treating phobias, anxiety disorders, and PTSD.</div>
+        </div>
+
+        <div class="faq-item" id="faq2" onclick="toggleAnswer('faq2')">
+            <div class="question">2. How does Virtual Reality (VR) help in exposure therapy?</div>
+            <div class="answer">VR allows therapists to create realistic simulations where patients can confront their fears safely. For example, a person with a fear of heights can experience virtual skyscraper views, providing a safe yet effective treatment method.</div>
+        </div>
+
+        <div class="faq-item" id="faq3" onclick="toggleAnswer('faq3')">
+            <div class="question">3. Is VR exposure therapy safe for patients with anxiety disorders?</div>
+            <div class="answer">Yes, VR exposure therapy is designed to be safe. Therapists monitor patient reactions closely, and experiences can be paused or modified if anxiety levels rise beyond safe limits. Our proposed VR device integrates a heartbeat monitor for added safety.</div>
+        </div>
+
+        <div class="faq-item" id="faq4" onclick="toggleAnswer('faq4')">
+            <div class="question">4. What are the benefits of using VR therapy over traditional exposure therapy?</div>
+            <div class="answer">VR therapy offers controlled environments, customized experiences, and immersive scenarios that may be hard to recreate in real life. It is also more cost-effective and accessible to patients who may struggle to attend in-person sessions.</div>
+        </div>
+
+        <div class="faq-item" id="faq5" onclick="toggleAnswer('faq5')">
+            <div class="question">5. What types of phobias can VR exposure therapy treat?</div>
+            <div class="answer">VR therapy can effectively treat phobias such as fear of heights, social anxiety, claustrophobia, fear of public speaking, and even complex disorders like PTSD and OCD.</div>
+        </div>
+
+        <div class="faq-item" id="faq6" onclick="toggleAnswer('faq6')">
+            <div class="question">6. Is VR exposure therapy backed by scientific research?</div>
+            <div class="answer">Yes, extensive research has shown VR exposure therapy to be highly effective. Studies confirm its success rates can reach up to 90% for anxiety and phobia treatment.</div>
+        </div>
+
+        <div class="faq-item" id="faq7" onclick="toggleAnswer('faq7')">
+            <div class="question">7. Are there side effects of VR exposure therapy?</div>
+            <div class="answer">Side effects are minimal but may include mild discomfort, dizziness, or anxiety during the initial sessions. Therapists ensure patients gradually build confidence and remain calm throughout the process.</div>
+        </div>
+
+        <div class="faq-item" id="faq8" onclick="toggleAnswer('faq8')">
+            <div class="question">8. What countries are actively using VR-based exposure therapy?</div>
+            <div class="answer">Countries like the United States, United Kingdom, Australia, and several European nations have integrated VR exposure therapy into clinical practice with significant success.</div>
+        </div>
+
+        <div class="faq-item" id="faq9" onclick="toggleAnswer('faq9')">
+            <div class="question">9. How effective is VR therapy compared to traditional methods?</div>
+            <div class="answer">VR therapy has shown higher engagement levels and improved results due to its immersive nature. Patients often respond faster to VR sessions as the experience feels more real and interactive.</div>
+        </div>
+
+        <div class="faq-item" id="faq10" onclick="toggleAnswer('faq10')">
+            <div class="question">10. How does the proposed VR device ensure patient safety?</div>
+            <div class="answer">Our device integrates a heartbeat monitor that tracks physiological responses. If anxiety levels spike, the VR session automatically pauses or transitions to a calming environment.</div>
+        </div>
+
+        <div class="faq-item" id="faq11" onclick="toggleAnswer('faq11')">
+            <div class="question">11. Can VR exposure therapy be done at home?</div>
+            <div class="answer">Yes, with proper guidance from therapists, VR therapy can be conducted remotely. Patients receive tailored VR sessions while therapists track their progress remotely.</div>
+        </div>
+        <div class="faq-item" id="faq12" onclick="toggleAnswer('faq12')">
+            <div class="question">12. What is the innovative device proposed by your team?</div>
+            <div class="answer">Our proposed device integrates a VR headset with a heartbeat monitor that continuously tracks the patient’s physiological responses. If anxiety levels rise dangerously, the system automatically pauses the VR session or transitions to a calming virtual environment to ensure patient safety.</div>
+        </div>
+
+        <div class="faq-item" id="faq13" onclick="toggleAnswer('faq13')">
+            <div class="question">13. How does your proposed device improve patient safety during VR therapy?</div>
+            <div class="answer">Our device ensures safety by constantly monitoring the patient's heart rate. If it detects a sharp increase indicating distress, the device automatically switches to a relaxing virtual scene, such as a peaceful park or calm beach, helping the patient regain composure.</div>
+        </div>
+
+        <div class="faq-item" id="faq14" onclick="toggleAnswer('faq14')">
+            <div class="question">14. How is the heartbeat data analyzed in your device?</div>
+            <div class="answer">Our device uses predefined safe heart rate thresholds based on medical data. If the patient’s heart rate exceeds the limit, the system immediately triggers the safety intervention. This data-driven approach ensures personalized and adaptive therapy for each individual.</div>
+        </div>
+
+        <div class="faq-item" id="faq15" onclick="toggleAnswer('faq15')">
+            <div class="question">15. What inspired your team to develop this innovative device?</div>
+            <div class="answer">While researching VR exposure therapy, we identified a potential risk for patients with anxiety or heart conditions. Our device was designed to ensure patient safety by dynamically responding to stress indicators, combining technology with medical insights.</div>
+        </div>
+
+        <div class="faq-item" id="faq16" onclick="toggleAnswer('faq16')">
+            <div class="question">16. What future improvements are planned for your proposed device?</div>
+            <div class="answer">We plan to enhance our device by integrating AI algorithms that predict anxiety patterns more effectively, improving the system’s ability to adjust therapy intensity and create personalized treatment plans in real-time.</div>
+        </div>
+
+        
+
+        <div class="faq-item" id="faq17" onclick="toggleAnswer('faq17')">
+            <div class="question">17. Is VR exposure therapy suitable for children?</div>
+            <div class="answer">Yes, VR therapy can be adapted for children to treat social anxiety, school phobias, and behavioral issues in a safe, controlled environment.</div>
+        </div>
+
+        <div class="faq-item" id="faq18" onclick="toggleAnswer('faq18')">
+            <div class="question">18. How long does VR exposure therapy take to show results?</div>
+            <div class="answer">Results vary, but significant improvements are often seen within 6-12 sessions. Therapists design custom timelines based on the patient's anxiety level and progress.</div>
+        </div>
+
+        <div class="faq-item" id="faq19" onclick="toggleAnswer('faq19')">
+            <div class="question">19. Can VR exposure therapy be combined with medication?</div>
+            <div class="answer">Yes, VR therapy can complement medication as part of a comprehensive treatment plan. Therapists assess the best combination based on individual needs.</div>
+        </div>
+
+        <div class="faq-item" id="faq20" onclick="toggleAnswer('faq20')">
+            <div class="question">20. Is VR therapy covered by insurance?</div>
+            <div class="answer">Coverage varies by provider. Some mental health programs now include VR therapy under treatment plans, especially in the U.S. and Europe.</div>
+        </div>
+        <div class="faq-item" id="faq21" onclick="toggleAnswer('faq21')">
+            <div class="question">21. Can VR therapy be customized for each patient?</div>
+            <div class="answer">Yes, VR therapy sessions can be customized to match each patient's triggers, anxiety levels, and comfort zones. Therapists tailor the virtual scenarios to ensure the experience is effective yet manageable.</div>
+        </div>
+
+        <div class="faq-item" id="faq22" onclick="toggleAnswer('faq22')">
+            <div class="question">22. Are VR therapy results long-lasting?</div>
+            <div class="answer">Yes, research shows that VR therapy creates lasting improvements, especially when combined with continued cognitive-behavioral therapy (CBT) and follow-up assessments.</div>
+        </div>
+
+        <div class="faq-item" id="faq23" onclick="toggleAnswer('faq23')">
+            <div class="question">23. Is VR therapy suitable for elderly patients?</div>
+            <div class="answer">Absolutely. VR therapy has been successfully adapted for elderly patients dealing with anxiety, isolation, and certain phobias. Specially designed content makes sessions engaging and effective.</div>
+        </div>
+
+        <div class="faq-item" id="faq24" onclick="toggleAnswer('faq24')">
+            <div class="question">24. Can VR exposure therapy be used for trauma recovery?</div>
+            <div class="answer">Yes, VR therapy is increasingly used for PTSD treatment, especially for military veterans and trauma survivors. It allows individuals to process past experiences in a safe, controlled environment.</div>
+        </div>
+
+        <div class="faq-item" id="faq25" onclick="toggleAnswer('faq25')">
+            <div class="question">25. What equipment is required for VR exposure therapy?</div>
+            <div class="answer">VR exposure therapy typically requires a VR headset, motion controllers, and specialized therapy software designed to guide patients through controlled exposure exercises.</div>
+        </div>
+
+        <div class="faq-item" id="faq26" onclick="toggleAnswer('faq26')">
+            <div class="question">26. Are VR devices affordable for therapy clinics?</div>
+            <div class="answer">Many cost-effective VR headsets like Meta Quest 2 and Pico VR offer accessible solutions for clinics looking to implement VR therapy.</div>
+        </div>
+
+        <div class="faq-item" id="faq27" onclick="toggleAnswer('faq27')">
+            <div class="question">27. How can VR therapy help people with social anxiety?</div>
+            <div class="answer">VR therapy can simulate social scenarios like parties, presentations, or job interviews to help patients gradually build social confidence in a safe environment.</div>
+        </div>
+
+        <div class="faq-item" id="faq28" onclick="toggleAnswer('faq28')">
+            <div class="question">28. What training do therapists need to use VR therapy?</div>
+            <div class="answer">Therapists typically undergo specialized training in VR software operation, scenario customization, and patient monitoring to ensure safe and effective treatment.</div>
+        </div>
+
+        <div class="faq-item" id="faq29" onclick="toggleAnswer('faq29')">
+            <div class="question">29. Can VR exposure therapy be integrated with traditional counseling?</div>
+            <div class="answer">Yes, VR therapy is often combined with counseling, CBT, and relaxation techniques for improved outcomes in mental health treatment.</div>
+        </div>
+
+        <div class="faq-item" id="faq30" onclick="toggleAnswer('faq30')">
+            <div class="question">30. What role does AI play in VR exposure therapy?</div>
+            <div class="answer">AI enhances VR therapy by adapting scenarios in real-time based on the patient’s anxiety levels, improving personalization and enhancing treatment effectiveness.</div>
+        </div>
+        
+
+        <!-- Questions about the page creators -->
+
+        <div class="faq-item" id="faq31" onclick="toggleAnswer('faq31')">
+            <div class="question">31. Who are the creators of this project?</div>
+            <div class="answer">We are BTech students from Shri Vishnu Engineering College for Women, passionate about improving mental health care through innovative solutions.</div>
+        </div>
+
+        <div class="faq-item" id="faq32" onclick="toggleAnswer('faq32')">
+            <div class="question">32. Why did you choose VR therapy as your research topic?</div>
+            <div class="answer">We believe VR exposure therapy has immense potential to revolutionize mental health treatment, making it safer, accessible, and engaging for patients worldwide.</div>
+        </div>
+
+        <div class="faq-item" id="faq33" onclick="toggleAnswer('faq33')">
+            <div class="question">33. What inspired you to build a VR-based solution?</div>
+            <div class="answer">Our research on anxiety treatment showed that VR can provide better control, improved engagement, and faster recovery compared to traditional therapy alone.</div>
+        </div>
+
+        <div class="faq-item" id="faq34" onclick="toggleAnswer('faq34')">
+            <div class="question">34. What challenges did you face during the project?</div>
+            <div class="answer">Designing a safe and effective VR experience required extensive research, balancing technical innovation with medical safety measures.</div>
+        </div>
+
+        <div class="faq-item" id="faq35" onclick="toggleAnswer('faq35')">
+            <div class="question">35. What are your future plans for this project?</div>
+            <div class="answer">We aim to expand our solution into a working prototype that combines VR therapy with AI-based monitoring to enhance patient safety and well-being.</div>
+        </div>
+    </div>
+
+</body>
+</html>

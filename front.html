@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Empath VR</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #b0d4c1;
+            display: flex;
+            cursor: default;
+            height: 100vh; /* Ensures body fills the entire height */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: flex-start; /* Ensure content starts from top */
+            align-items: center;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background: #4caf50;
+        }
+
+        /* Hidden Menu */
+        .menu-bar {
+            width: 200px;
+            background: #4caf50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            left: -200px;
+            height: 100%;
+            transition: left 0.3s ease;
+        }
+
+        /* Show menu when active */
+        .menu-bar.active {
+            left: 0;
+        }
+
+        .menu-bar a, .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            transition: background 0.2s;
+            padding: 10px 20px;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-bar a:hover, .back-btn:hover {
+            background: #2d6a4f;
+        }
+
+        /* Back Button */
+        .back-btn {
+            background: #2f625c;
+            margin-top: auto;
+        }
+
+        /* Main Content */
+        .content {
+            flex-grow: 1; /* Allow the content to take up all available space */
+            padding: 20px;
+            text-align: center;
+            margin-left: 0;
+            transition: margin-left 0.3s ease;
+            max-width: 1000px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Typing Effect */
+        #welcome {
+            color: #4caf50;
+            font-size: 2.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid #4caf50;
+            width: 0;
+            margin-bottom: 20px;
+            animation: typing 3s steps(40, end) forwards;
+            caret-color: transparent; /* Ensure caret is invisible after typing */
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+       
+/* Section Styling */
+section {
+    background: #d8f3dc;
+    margin: 20px auto;
+    padding: 15px; /* Keep the padding minimal */
+    border-radius: 10px;
+    width: 700px; /* Keep the width as is or adjust if needed */
+    max-width: 900px; /* Set maximum width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 120px; /* Decrease the minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+/* Add Hover Effect */
+section:hover {
+    background: #a8d5ba; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+    /* Container for the sections to arrange them in rows */
+.section-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Allows sections to wrap onto the next line */
+    gap: 15px; /* Add space between sections */
+    padding: 20px; /* Add padding around the container */
+    width: 100%;
+}
+
+
+
+        /* Section Headers */
+        h2 {
+            color: #2d6a4f;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%; /* Ensures the footer takes full width */
+            height: 2rem; /* Set height to 5rem */
+            text-align: center;
+            padding: 1rem 0; /* Adds some vertical padding for better spacing */
+            background: #4caf50;
+            color: white;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centers the text vertically */
+            position: relative; /* Keep it relative for better control */
+            bottom: 0; /* Align it to the bottom */
+        }
+
+        /* Logo and Title Styling */
+        .logo-container {
+            display: flex;
+            align-items: center; /* Aligns logo and text vertically */
+            margin-bottom: 40px; /* Adds space below logo */
+            justify-content: center;
+            margin-top: 40px;  /* Increased margin-top to shift down the logo and heading */
+            padding: 0 20px; /* Adds padding to prevent logo from cutting off */
+        }
+
+        .logo {
+            padding: 10px;  /* Adds padding around the logo */
+        }
+
+        .logo img {
+            width: 120px;  /* Adjust size */
+            height: 100px;
+            border-radius: 10px; /* Optional: add some rounded corners */
+            border: 3px solid #4caf50; /* Optional: border to make it more visible */
+        }
+
+        .logo-text {
+            font-size: 4rem; /* Make the title larger */
+            color: #4caf50;
+            margin-left: 20px; /* Adds space between logo and text */
+            font-weight: bold;
+            background: linear-gradient(90deg, #4caf50, #2d6a4f); /* Gradient background */
+            -webkit-background-clip: text; /* Clip the gradient to the text */
+            color: transparent; /* Make the text color transparent to show the gradient */
+            animation: fadeIn 2s ease-out; /* Apply fade-in animation */
+        }
+
+        /* Fade-in animation for the title */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+
+        /* Ensure sections are visible */
+        section {
+            margin-top: 20px;
+        }
+
+        /* Remove underline from links and add a hover effect */
+        a {
+            text-decoration: none; /* Remove default underline */
+        }
+
+        a:hover section {
+            background: #2d6a4f; /* Change the background on hover */
+            color: white; /* Optionally change text color when hovered */
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="menu-bar" id="menuBar">
+        <a href="#welcome" onclick="toggleMenu()">Home</a>
+        <a href="white.html" onclick="toggleMenu()">Whitepaper & Research</a>
+        <a href="community.html" onclick="toggleMenu()">Community</a>
+        <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+        <div class="back-btn" onclick="toggleMenu()">Back</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <!-- Logo and Title Section -->
+        <div class="logo-container">
+            <div class="logo">
+                <!-- Replace this with the path to your actual logo -->
+                <img src="images/WhatsApp Image 2025-03-22 at 10.26.49_7376bd42.jpg" alt="Empath VR Logo">
+            </div>
+            <div class="logo-text">
+                Empath VR
+            </div>
+        </div>
+
+        <header>
+            <h1 id="welcome">Welcome to Empath VR</h1>
+        </header>
+
+        <!-- Combined Whitepaper & Research Section -->
+        <section id="whitepaper-research" onclick="window.location.href='white.html'">
+            <h2>Whitepaper & Research</h2>
+            <p>Learn about the scientific research and methodologies behind VR-based exposure therapy. Explore detailed insights, case studies, and findings in our research repository.</p>
+        </section>
+
+        <section id="community" onclick="window.location.href='community.html'">
+            <h2>Community</h2>
+            <p>Engage with other users, share experiences, and join discussions.</p>
+        </section>
+
+        <section id="faq" onclick="window.location.href='faq.html'">
+            <h2>FAQ</h2>
+            <p>Find answers to commonly asked questions about Empath VR.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Empath VR. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menuBar = document.getElementById('menuBar');
+            menuBar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
